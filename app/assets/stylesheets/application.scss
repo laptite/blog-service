@@ -18,6 +18,12 @@ a {
 	color: inherit;
 }
 
+#errors {
+	p {
+		color: red;
+		font-size: 0.75em
+	}
+}
 #sidebar {
 	width: 200px;
 	position: fixed;

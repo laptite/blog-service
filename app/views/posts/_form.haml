@@ -1,4 +1,8 @@
 = form_for :post, url: posts_path do |f|
+	- if @post.errors.any?
+		#errors
+			- @post.errors.each do |err, msg|
+				%p= "#{err} #{msg}"
 	%p
 		= f.label :title
 		= f.text_field :title
@@ -6,4 +10,4 @@
 		= f.label :body
 		= f.text_area :body
 	%p
-		= f.submit "Save"
+		= f.submit 'Save'
