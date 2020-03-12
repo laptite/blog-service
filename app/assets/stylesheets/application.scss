@@ -18,8 +18,13 @@ a {
 	color: inherit;
 }
 
-#errors {
-	p {
+.label {
+	position: relative;
+  width: 72%;
+	.errors {
+		position: absolute;
+    top: 5px;
+    right: 0;
 		color: red;
 		font-size: 0.75em
 	}
@@ -232,7 +237,6 @@ a {
 		width: 70%;
 		border: 1px solid #d6dce0;
 		border-radius: .35em;
-		margin-top: 20px;
 		padding: .5em 1em;
 		line-height: 1.75;
 	}
