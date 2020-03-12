@@ -5,6 +5,14 @@
 
 @import 'normalize';
 
+$banner-blue: #529FCD;
+$light-gray: #d6dce0;
+$light-red: #ffdbdb;
+$red: #ff0000;
+$light-green: #88D0AD;
+$green: #51c18c;
+$white: #FFF;
+
 html, body {
 	font-family: 'PT Sans Narrow', sans-serif;
 }
@@ -18,6 +26,13 @@ a {
 	color: inherit;
 }
 
+.link {
+	text-decoration: underline;
+	color: $banner-blue;
+	&:hover {
+		color: black;
+	}
+}
 .label {
 	position: relative;
   width: 72%;
@@ -35,17 +50,17 @@ a {
 	left: 0;
 	top: 0;
 	height: 100%;
-	background: #88D0AD;
+	background: $light-green;
 	padding: 7em 0 0 0;
 	border-right: 1px solid #b8e2fe;
 
 	ul {
 		list-style: none;
 		text-align: right;
-		padding-right: 3em;
+		padding-right: 2.5em;
 		.category {
 			font-weight: 900;
-			font-size: 2em;
+			font-size: 1.75em;
 			text-transform: uppercase;
 			color: #22747b;
 		}
@@ -68,7 +83,7 @@ a {
 	}
 	.sign-in {
 		position: absolute;
-		right: 3em;
+		right: 2.5em;
 		top: 34%;
 		font-size: 1.0em;
 		color: #FFFFFF;
@@ -78,9 +93,10 @@ a {
 .button {
 	outline: none;
 	background: transparent;
-	border: 1.5px solid #FFF;
+	border: 1px solid #FFF;
 	padding: .5em 2.5em;
 	border-radius: 0.5em;
+	color: $white;
 	&:hover {
 		border: 1px solid #333734;
 		color: #22487b;
@@ -103,7 +119,7 @@ a {
 	#header {
 		padding: 1.2em 3.5em;
 		border-bottom: 1px solid #b8e2fe;
-		background: #529FCD;
+		background: $banner-blue;
 		color: #FFF;
 		p {
 			display: inline;
@@ -122,26 +138,29 @@ a {
 		}
 	}
 	.post-wrapper {
-		padding: 1.9em;
+		padding: 1.9em 4em;
+		.post {
+			padding-top: 10px;
+		}
 		.title {
-			margin: 2px;
+			margin: 4px 0;
 			a {
 				font-weight: 500;
 				text-decoration: none;
-				color: #529FCD;
+				color: $banner-blue;
 				font-size: 1.2em;
 				&:hover {
 					color: #22487b;
 				}
 			}
 		}
-		.date_and_author {
-			color: #22487b;
-			margin: .5em 0 0 0;
+		.date {
+			font-size: 0.75em;
 		}
 		.body {
 			color: #d3d3d3;
 			margin: .5em 0 0 0;
+			font-size: 0.9em;
 		}
 	}
 	#post-content {
@@ -164,14 +183,14 @@ a {
 		#comments {
 			h2 {
 				margin: 3em 0 1em 0;
-				border-bottom: 1px solid #d6dce0;
+				border-bottom: 1px solid $light-gray;
 				padding-bottom: 0.5em;
 			}
 			h3 {
 				margin-top: 2em;
 			}
 			.comment {
-				border-bottom: 1px solid #d6dce0;
+				border-bottom: 1px solid $light-gray;
 				padding: 1.5em 2em;
 				.clear_both {
 					clear: both;
@@ -235,7 +254,7 @@ a {
 	}
 	input[type="text"], input[type="email"], input[type="password"], textarea {
 		width: 70%;
-		border: 1px solid #d6dce0;
+		border: 1px solid $light-gray;
 		border-radius: .35em;
 		padding: .5em 1em;
 		line-height: 1.75;
@@ -251,17 +270,24 @@ a {
 	textarea {
 		min-height: 180px;
 	}
-	input[type="submit"] {
+	.submit[data-method="delete"] {
+		background: $light-red;
+		&:hover{
+			border: 1px solid $red;
+			color: $red;
+		}
+	}
+	input[type="submit"], .submit {
 		outline: none;
 		background: transparent;
-		border: 1px solid #d6dce0;
+		border: 1px solid $light-gray;
 		padding: .5em 1.5em;
 		font-size: 1.1em;
 		border-radius: 1.5em;
 		margin-left: .5em;
 		&:hover {
-			border: 1px solid #33acb7;
-			color: #33acb7;
+			border: 1px solid $light-green;
+			color: $green;
 		}
 	}
 }

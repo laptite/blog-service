@@ -40,7 +40,6 @@ class PostsController < ApplicationController
 	private
 
 		def find_post
-			@posts = Post.all
 			@post = Post.find(params[:id])
 		end
 
