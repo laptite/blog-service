@@ -7,3 +7,9 @@
 		|
 		= link_to 'Edit', edit_post_path(@post), class: 'link'
 	%p=@post.body
+
+	%div#comments
+		%h2="#{@post.comments.count} Comments"
+		= render @post.comments
+		%h3 Join Discussion
+		= render partial: "comments/form"

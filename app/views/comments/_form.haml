@@ -1,0 +1,16 @@
+= form_for([@post, @post.comments.build]) do |f|
+	-# comment_errors = @post.comments.errors.messages
+	%p
+		.label
+			= f.label :name
+			-# .errors= comment_errors[:title][0]
+			= f.text_field :name
+
+	%p
+		.label
+			= f.label :body
+			-# .errors= comment_errors[:body][0]
+			= f.text_area :body
+
+	%p
+		= f.submit "Save"
