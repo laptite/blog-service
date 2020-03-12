@@ -1,0 +1,31 @@
+!!!
+%html
+  %head
+    %title BlogSrvice
+    = csrf_meta_tags
+    = csp_meta_tag
+    = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload'
+    = stylesheet_link_tag 'application', "https://fonts.googleapis.com/css?family=Raleway&display=swap" 
+    = favicon_link_tag 'favicon.ico'
+    = javascript_pack_tag 'application', 'data-turbolinks-track': 'reload'
+
+  %body
+    %div#sidebar
+      %ul
+        %li.category= link_to 'BlogSrvice', root_path
+        %li= link_to 'Posts', root_path
+        %li About
+      %p.sign-in User Login
+
+    %div#main-content
+      %div#header
+        %p Post Feed
+        %div.buttons
+          - unless params[:action] == 'new'
+            %button.button= link_to "Create Post", new_post_path
+          %button.button Logout
+
+      - flash.each do |name, msg|
+        = content_tag(:div, msg, class: 'alert')
+
+      = yield
