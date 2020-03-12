@@ -1,5 +1,5 @@
 class CommentsController < ApplicationController
-	before_action :find_post, only: [:show, :destroy]
+	before_action :find_post, only: [:create, :destroy]
 
 	def create
 		@comment = @post.comments.create(params[:comment].permit(:name, :body))

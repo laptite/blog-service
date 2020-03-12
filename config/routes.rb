@@ -1,8 +1,12 @@
 Rails.application.routes.draw do
 
+  devise_for :users
+	root 'posts#index'
+
 	resources :posts do 
 		resource :comments
 	end
 
-	root 'posts#index'
+	get '/about', to: 'pages#about'
+
 end

@@ -27,6 +27,28 @@ a {
 	color: inherit;
 }
 
+.alert, .notice {
+	position: absolute;
+  width: 100%;
+	text-align: center;
+	line-height: 2.5em;
+	background: $light-gray;
+	margin: 0;
+}
+.alert {
+	color: $red;
+}
+.notice {
+	color: $dark-gray;
+}
+.field {
+	label {
+		margin: 4px 0;
+	}
+	input {
+		margin-bottom: 15px;
+	}
+}
 .link {
 	text-decoration: underline;
 	color: $banner-blue;
@@ -116,6 +138,7 @@ a {
 }
 
 #main-content {
+	position: relative;
 	margin-left: 200px;
 	#header {
 		padding: 1.2em 3.5em;
@@ -202,7 +225,7 @@ a {
 				.comment-content {
 					float: left;
 					.comment-name {
-						margin: 1em 0 0 0;
+						margin: 0;
 						font-size: 1.0em;
 						text-transform: uppercase;
 					}
@@ -226,7 +249,7 @@ a {
 	}
 	#page-wrapper {
 		padding: 3em;
-		#profile_image {
+		#profile-image {
 			width: 300px;
 			float: left;
 			margin-right: 2em;
