@@ -1,8 +1,11 @@
 Rails.application.routes.draw do
 
+	root 'posts#index'
+
 	resources :posts do 
 		resource :comments
 	end
 
-	root 'posts#index'
+	get '/about', to: 'pages#about'
+
 end
