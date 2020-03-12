@@ -6,11 +6,12 @@
 @import 'normalize';
 
 $banner-blue: #529FCD;
+$dark-gray: #333734;
+$green: #51c18c;
 $light-gray: #d6dce0;
+$light-green: #88D0AD;
 $light-red: #ffdbdb;
 $red: #ff0000;
-$light-green: #88D0AD;
-$green: #51c18c;
 $white: #FFF;
 
 html, body {
@@ -182,7 +183,7 @@ a {
 		}
 		#comments {
 			h2 {
-				margin: 3em 0 1em 0;
+				margin: 2em 0 0 0;
 				border-bottom: 1px solid $light-gray;
 				padding-bottom: 0.5em;
 			}
@@ -198,19 +199,19 @@ a {
 				&:after {
 					clear: both;
 				}
-				.comment_content {
+				.comment-content {
 					float: left;
-					.comment_name {
+					.comment-name {
 						margin: 1em 0 0 0;
 						font-size: 1.0em;
 						text-transform: uppercase;
 					}
-					.comment_body {
+					.comment-body {
 						font-size: 1.2em;
 						margin: 0.2em 0 0 0;
 					}
-					.comment_time {
-						margin-top: 1.2em;
+					.comment-time {
+						margin: 1.2em 0 0;
 						font-size: .8em;
 					}
 				}
@@ -265,13 +266,16 @@ a {
 	label, textarea {
 		vertical-align: middle;
     display: inline-block;
-    min-width: 30px;
+    min-width: 35px;
 	}
 	textarea {
 		min-height: 180px;
 	}
-	.submit[data-method="delete"] {
+	.submit[data-method="delete"], 
+	.button[data-method="delete"] {
 		background: $light-red;
+		border: 1px solid #333734;
+		color: #333734;
 		&:hover{
 			border: 1px solid $red;
 			color: $red;
