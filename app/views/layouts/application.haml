@@ -13,9 +13,9 @@
     %div#sidebar
       %ul
         %li.category= link_to "BlogSrvice", root_path
-        %li= link_to "All Posts", root_path
+        - unless current_page?(root_path)
+          %li= link_to "All Posts", root_path
         %li= link_to "About", about_path
-      %p.sign-in User Login
 
     %div#main-content
       %div#header
@@ -24,12 +24,19 @@
         - else
           = link_to "Post Feed", root_path
 
-        %div.buttons
-          - unless params[:action] == 'new'
-            %button.button= link_to "Create Post", new_post_path
-          %button.button Logout
+        - if user_signed_in?
+          %div.buttons
+            - unless params[:action] == 'new'
+              %button.button= link_to "Create Post", new_post_path
+            %button.button= link_to "Logout", destroy_user_session_path, method: :delete
+        - else
+          %div.buttons
+            %button.button= link_to "Login", new_user_session_path
+            %button.button= link_to "Sign Up", new_user_registration_path
 
-      - flash.each do |name, msg|
-        = content_tag(:div, msg, class: 'alert')
+      - if notice.present?
+        %p.notice=notice
+      - if alert.present?
+        %p.alert=alert
 
       = yield
