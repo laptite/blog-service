@@ -12,14 +12,15 @@
   %body
     %div#sidebar
       %ul
-        %li.category= link_to 'BlogSrvice', root_path
-        %li= link_to 'Posts', root_path
+        %li.category= link_to "BlogSrvice", root_path
+        %li= link_to "All Posts", root_path
         %li About
       %p.sign-in User Login
 
     %div#main-content
       %div#header
-        %p Post Feed
+        -# %p Post Feed
+        = link_to "Post Feed", root_path
         %div.buttons
           - unless params[:action] == 'new'
             %button.button= link_to "Create Post", new_post_path

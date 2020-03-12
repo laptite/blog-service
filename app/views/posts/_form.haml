@@ -1,9 +1,16 @@
-= form_for :post, url: posts_path do |f|
+= form_for @post do |f|
 	%p
-		= f.label :title
+		.label
+			= f.label :title
+			.errors= @post.errors.messages[:title][0]
 		= f.text_field :title
 	%p
-		= f.label :body
+		.label
+			= f.label :body
+			.errors= @post.errors.messages[:body][0]
 		= f.text_area :body
 	%p
-		= f.submit "Save"
+		= f.submit 'Save'
+		- unless params[:action] == 'new'
+			= link_to 'Delete', post_path(@post), method: :delete, data: { confirm: 'Are you sure you want to delete this post?' }, class: 'submit'
+		
