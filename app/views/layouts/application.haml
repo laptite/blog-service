@@ -14,13 +14,16 @@
       %ul
         %li.category= link_to "BlogSrvice", root_path
         %li= link_to "All Posts", root_path
-        %li About
+        %li= link_to "About", about_path
       %p.sign-in User Login
 
     %div#main-content
       %div#header
-        -# %p Post Feed
-        = link_to "Post Feed", root_path
+        - if current_page?(about_path)
+          %p About this Site
+        - else
+          = link_to "Post Feed", root_path
+
         %div.buttons
           - unless params[:action] == 'new'
             %button.button= link_to "Create Post", new_post_path
