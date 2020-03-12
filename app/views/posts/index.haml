@@ -1,0 +1,10 @@
+%h1 My blogs
+
+%div
+	- @posts.each do |post|
+		%h3=link_to post.title, post_path(post)
+		= surround '(', ')' do
+			= "Created #{time_ago_in_words(post.created_at)} ago"
+		%p=truncate(post.body, length: 50)
+		%hr
+		
