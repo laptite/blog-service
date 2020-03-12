@@ -1,6 +1,4 @@
-%h1 My blogs
-
-%div
+%div.post-wrapper
 	- @posts.each do |post|
 		%h3=link_to post.title, post_path(post)
 		= surround '(', ')' do
